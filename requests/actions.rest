@@ -1,7 +1,7 @@
 # My Variables
 @contentType = application/json
 # @baseurl = https://backend-v2.onrender.com/api
-@baseurl = http://localhost:4000/api
+@baseurl = http://localhost:3000/api
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdmMjBhZGI0ODEwN2YyZDk2Mjc0MDYiLCJpYXQiOjE2Njk3ODM3NjksImV4cCI6MTY3MDA0Mjk2OX0.oM_iFcpr0EBogxO2Ki4t8xbdnVO0kXDRpi1vor7u3Ug
 
 

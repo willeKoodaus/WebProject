@@ -36,7 +36,7 @@ const Home = () => {
           <RecipeDetails key={recipe._id} recipe={recipe} />
         ))}
       </div>
-      <div className="righcolumn">
+      <div className="rightcolumn">
       <RecipeForm />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { useRecipesContext } from '../hooks/useRecipesContext'
 import { useAuthContext } from '../hooks/useAuthContext'
-
+import Reviews from './Reviews';
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
@@ -36,6 +36,7 @@ const RecipeDetails = ({ recipe }) => {
           <p>
             {ingredient.amount} {ingredient.unit} {ingredient.ingredient}</p></div>))}</p>
       <p><strong>Instructions: </strong>{recipe.instructions}</p>
+      <section><Reviews recipe={recipe} /></section>
       <p>{formatDistanceToNow(new Date(recipe.createdAt), { addSuffix: true })}</p>
       <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
     </div>

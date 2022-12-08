@@ -117,6 +117,14 @@ const RecipeForm = () => {
             className={emptyFields.includes('instructions') ? 'error' : ''}
             />
             </label>
+            <label>
+              Make recipe public?
+              <input 
+              type="checkbox" 
+              id="public"
+              onChange={(event) => setPublicity(event.target.value)}
+              />
+            </label>
             <button type="submit">Submit Recipe</button>
             </form>
             );

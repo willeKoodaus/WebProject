@@ -61,10 +61,11 @@ const RecipeForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="recipeform" onSubmit={handleSubmit}>
       {error && <p className="error">{error}</p>}
       <label>
-        <h2>Recipe Name:</h2>
+        <h2>Add new recipe</h2>
+        <h3>Recipe Name:</h3>
         <input
           type="text"
           value={recipeName}
@@ -78,7 +79,7 @@ const RecipeForm = () => {
           <p>
             {ingredient.amount} {ingredient.unit} {ingredient.ingredient}
 
-            <button onClick={() => setIngredients((prev) => prev.filter((_, i) => i !== index))}>
+            <button className="removebutton" onClick={() => setIngredients((prev) => prev.filter((_, i) => i !== index))}>
             Remove
             </button>
             </p>
@@ -108,7 +109,7 @@ const RecipeForm = () => {
             onChange={(event) => setUnit(event.target.value)}
             />
             </label>
-            <button onClick={handleAddIngredient}>Add Ingredient</button>
+            <button className="recipeformbutton" onClick={handleAddIngredient}>Add Ingredient</button>
             <label>
             <h3>Instructions:</h3>
             <textarea
@@ -117,7 +118,7 @@ const RecipeForm = () => {
             className={emptyFields.includes('instructions') ? 'error' : ''}
             />
             </label>
-            <button type="submit">Submit Recipe</button>
+            <button className="recipeformbutton" type="submit">Submit Recipe</button>
             </form>
             );
             };

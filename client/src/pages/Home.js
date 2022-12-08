@@ -36,7 +36,9 @@ const Home = () => {
           <RecipeDetails key={recipe._id} recipe={recipe} />
         ))}
       </div>
+      <div className="righcolumn">
       <RecipeForm />
+      </div>
     </div>
   )
 }

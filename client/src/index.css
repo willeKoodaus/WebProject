@@ -28,7 +28,8 @@ header a {
   color: #FF7700;
   text-decoration: none;
   font-size: 30px;
-  padding: 0px 20px 0px 0px;
+  padding: 0px 0x 0px 0px;
+  margin-right: 50px;
   font-family: "Dancing Script";
 }
 
@@ -44,7 +45,7 @@ header span {
 }
 
 header button {
-  margin: 10px 5px 0px 5px;
+  margin: 10px 5px 0px 10px;
   font-size: 20px;
   background-color: #FF7700;
   background: var(--primary);
@@ -74,22 +75,43 @@ header button {
   margin: 50px;
   border-radius: 10px;
 }
+
+.signup h2 {
+  color: #FF7700;
+  font-family: "Dancing Script";
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.signup button {
+  font-size: 18px;
+}
+
+.signup {
+  background: #fff;
+  padding: 30px 50px 50px 50px;
+  margin: 50px;
+  border-radius: 10px;
+}
 .pages{
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
 }
 
+
 /* homepage */
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  gap: 40px;
 }
+
+.home 
 .recipe-details {
   background: #fff;
   border-radius: 10px;
-  width: 90%;
+  width: 85%;
   margin: 20px auto;
   padding: 20px;
   position: relative;
@@ -103,7 +125,6 @@ header button {
 .recipe-details p {
   margin: 0;
   font-size: 18px;
-  color: #555;
 }
 
 .dateposted {
@@ -123,6 +144,30 @@ header button {
   color: #333;
 }
 
+.recipeform {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 30px 30px 30px;
+  margin-top: 20px;
+}
+
+.recipeform h2 {
+  font-family: "Dancing Script";
+  color: #FF7700;
+  font-size: 40px;
+}
+
+.instructions {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.removebutton {
+  margin-left: 10px;
+  font-size: 15px;
+  padding: 8px;
+}
+
 /* new recipe form */
 label, input {
   display: block;
@@ -136,6 +181,7 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 form button {
   background: var(--primary);
   font-size: 18px;

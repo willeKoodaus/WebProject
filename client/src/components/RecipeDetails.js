@@ -35,7 +35,7 @@ const RecipeDetails = ({ recipe }) => {
         <div key={index}>
           <p>
             {ingredient.amount} {ingredient.unit} {ingredient.ingredient}</p></div>))}</p>
-      <p><strong>Instructions: </strong><br/>{recipe.instructions}</p>
+      <div className="instructions"><strong>Instructions: </strong><br/>{recipe.instructions}</div>
       <div className="dateposted">{formatDistanceToNow(new Date(recipe.createdAt), { addSuffix: true })}</div>
       <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
     </div>

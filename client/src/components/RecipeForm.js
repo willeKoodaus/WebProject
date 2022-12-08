@@ -64,7 +64,7 @@ const RecipeForm = () => {
     <form onSubmit={handleSubmit}>
       {error && <p className="error">{error}</p>}
       <label>
-        Recipe Name:
+        <h2>Recipe Name:</h2>
         <input
           type="text"
           value={recipeName}
@@ -110,7 +110,7 @@ const RecipeForm = () => {
             </label>
             <button onClick={handleAddIngredient}>Add Ingredient</button>
             <label>
-            Instructions:
+            <h3>Instructions:</h3>
             <textarea
             value={instructions}
             onChange={(event) => setInstructions(event.target.value)}

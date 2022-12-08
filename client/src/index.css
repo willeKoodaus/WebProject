@@ -1,13 +1,14 @@
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300;400;500;600;800&family=VT323&display=swap');
 
 /* layout */
 :root {
-  --primary: #1aac83;
-  --error: #e7195a;
+  --primary: #FF7700;
+  --error: #A30000;
 }
 body {
-  background: #f1f1f1;
+  background: #F7EAC9;
   margin: 0;
   font-family: "Poppins";
 }
@@ -17,14 +18,61 @@ header {
 header .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 0px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 header a {
-  color: #333;
+  color: #FF7700;
   text-decoration: none;
+  font-size: 30px;
+  padding: 0px 20px 0px 0px;
+  font-family: "Dancing Script";
+}
+
+header img {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  margin-left: 45px;
+}
+
+header span {
+  margin: 10px;
+  font-size: 20px;
+}
+
+header button {
+  margin: 10px 5px 0px 5px;
+  font-size: 20px;
+  background-color: #FF7700;
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.login h2 {
+  color: #FF7700;
+  font-family: "Dancing Script";
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.login button {
+  font-size: 18px;
+}
+
+.login {
+  background: #fff;
+  padding: 30px 50px 50px 50px;
+  margin: 50px;
+  border-radius: 10px;
 }
 .pages{
   max-width: 1400px;
@@ -40,7 +88,8 @@ header a {
 }
 .recipe-details {
   background: #fff;
-  border-radius: 4px;
+  border-radius: 10px;
+  width: 90%;
   margin: 20px auto;
   padding: 20px;
   position: relative;
@@ -53,9 +102,16 @@ header a {
 }
 .recipe-details p {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 18px;
   color: #555;
 }
+
+.dateposted {
+  margin-top:10px;
+  font-size: 18px;
+  color:#FF7700;
+}
+
 .recipe-details span {
   position: absolute;
   top: 20px;
@@ -82,6 +138,7 @@ input {
 }
 form button {
   background: var(--primary);
+  font-size: 18px;
   border: 0;
   color: #fff;
   padding: 10px;
@@ -89,6 +146,18 @@ form button {
   border-radius: 4px;
   cursor: pointer;
 }
+
+form textarea {
+  padding: 10px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
 div.error {
   padding: 10px;
   background: #ffefef;

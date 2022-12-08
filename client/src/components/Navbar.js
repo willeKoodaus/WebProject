@@ -14,7 +14,8 @@ const Navbar = () => {
     <header>
       <div className="container">
         <Link to="/">
-          <h1>recipe Buddy</h1>
+        <img src="https://i.ibb.co/4WqW8GQ/logo4.png" alt="company logo"/>
+
         </Link>
         <nav>
           {user && (
@@ -24,7 +25,7 @@ const Navbar = () => {
             </div>
           )}
           {!user && (
-            <div>
+            <div >
               <Link to="/login">Login</Link>
               <Link to="/signup">Signup</Link>
             </div>

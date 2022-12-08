@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;800&family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300;400;500;600;800&family=VT323&display=swap');
 
 /* layout */
@@ -10,7 +10,7 @@
 body {
   background: #F7EAC9;
   margin: 0;
-  font-family: "Poppins";
+  font-family: "Mulish";
 }
 header {
   background: #fff;
@@ -27,7 +27,7 @@ header .container {
 header a {
   color: #FF7700;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 40px;
   padding: 0px 0x 0px 0px;
   margin-right: 50px;
   font-family: "Dancing Script";
@@ -52,7 +52,7 @@ header button {
   border: 0;
   color: #fff;
   padding: 10px;
-  font-family: "Poppins";
+  font-family: "Mulish";
   border-radius: 4px;
   cursor: pointer;
 
@@ -61,7 +61,7 @@ header button {
 .login h2 {
   color: #FF7700;
   font-family: "Dancing Script";
-  font-size: 35px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -71,15 +71,16 @@ header button {
 
 .login {
   background: #fff;
-  padding: 30px 50px 50px 50px;
+  padding: 20px 50px 50px 50px;
   margin: 50px;
   border-radius: 10px;
+  font-size: 20px;
 }
 
 .signup h2 {
   color: #FF7700;
   font-family: "Dancing Script";
-  font-size: 35px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -89,9 +90,10 @@ header button {
 
 .signup {
   background: #fff;
-  padding: 30px 50px 50px 50px;
+  padding: 20px 50px 50px 50px;
   margin: 50px;
   border-radius: 10px;
+  font-size: 20px;
 }
 .pages{
   max-width: 1400px;
@@ -113,24 +115,27 @@ header button {
   border-radius: 10px;
   width: 85%;
   margin: 20px auto;
-  padding: 20px;
+  padding: 30px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 .recipe-details h4 {
-  margin: 0 0 10px 0;
-  font-size: 1.2em;
+  margin: 0 0 15px 0;
+  font-size: 40px;
+  font-family: "Dancing Script";
   color: var(--primary);
 }
 .recipe-details p {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .dateposted {
-  margin-top:10px;
+  margin-top:15px;
   font-size: 18px;
   color:#FF7700;
+  font-weight: bold;
 }
 
 .recipe-details span {
@@ -149,6 +154,7 @@ header button {
   border-radius: 10px;
   padding: 10px 30px 30px 30px;
   margin-top: 20px;
+  font-size: 18px;
 }
 
 .recipeform h2 {
@@ -159,7 +165,8 @@ header button {
 
 .instructions {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .removebutton {
@@ -188,7 +195,7 @@ form button {
   border: 0;
   color: #fff;
   padding: 10px;
-  font-family: "Poppins";
+  font-family: "Mulish";
   border-radius: 4px;
   cursor: pointer;
 }

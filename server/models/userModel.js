@@ -27,7 +27,7 @@ userSchema.statics.signup = async function(email, password) {
     throw Error('Email not valid')
   }
   if (!validator.isStrongPassword(password)) {
-    throw Error('Password not strong enough')
+    throw Error('Password not strong enough. Password should be minimum 8 characters long contain uppercase letters, lowercase letters, symbols and numbers.')
   }
 
   const exists = await this.findOne({ email })

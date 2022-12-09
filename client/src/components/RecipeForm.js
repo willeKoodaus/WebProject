@@ -54,7 +54,6 @@ const RecipeForm = () => {
 
   const handleAddIngredient = (event) => {
     event.preventDefault();
-      // Ingredient is valid, add it to the list of ingredients
       setIngredients((prev) => [...prev, { ingredient, amount, unit }]);
       setIngredient('');
       setAmount(0);
@@ -62,10 +61,11 @@ const RecipeForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="recipeform" onSubmit={handleSubmit}>
       {error && <p className="error">{error}</p>}
       <label>
-        Recipe Name:
+        <h2>Add new recipe</h2>
+        <h3>Recipe Name:</h3>
         <input
           type="text"
           value={recipeName}
@@ -79,7 +79,7 @@ const RecipeForm = () => {
           <p>
             {ingredient.amount} {ingredient.unit} {ingredient.ingredient}
 
-            <button onClick={() => setIngredients((prev) => prev.filter((_, i) => i !== index))}>
+            <button className="removebutton" onClick={() => setIngredients((prev) => prev.filter((_, i) => i !== index))}>
             Remove
             </button>
             </p>
@@ -109,9 +109,9 @@ const RecipeForm = () => {
             onChange={(event) => setUnit(event.target.value)}
             />
             </label>
-            <button onClick={handleAddIngredient}>Add Ingredient</button>
+            <button className="recipeformbutton" onClick={handleAddIngredient}>Add Ingredient</button>
             <label>
-            Instructions:
+            <h3>Instructions:</h3>
             <textarea
             value={instructions}
             onChange={(event) => setInstructions(event.target.value)}
@@ -126,7 +126,7 @@ const RecipeForm = () => {
               onChange={(event) => setPublicity(event.target.value)}
               />
             </label>
-            <button type="submit">Submit Recipe</button>
+            <button className="recipeformbutton" type="submit">Submit Recipe</button>
             </form>
             );
             };

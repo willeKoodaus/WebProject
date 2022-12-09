@@ -1,15 +1,16 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300;400;500;600;800&family=VT323&display=swap');
 
 /* layout */
 :root {
-  --primary: #1aac83;
-  --error: #e7195a;
+  --primary: #FF7700;
+  --error: #A30000;
 }
 body {
-  background: #f1f1f1;
+  background: #F7EAC9;
   margin: 0;
-  font-family: "Poppins";
+  font-family: "Mulish";
 }
 header {
   background: #fff;
@@ -17,14 +18,82 @@ header {
 header .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 0px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 header a {
-  color: #333;
+  color: #FF7700;
   text-decoration: none;
+  font-size: 40px;
+  padding: 0px 0x 0px 0px;
+  margin-right: 50px;
+  font-family: "Dancing Script";
+}
+
+header img {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  margin-left: 45px;
+}
+
+header span {
+  margin: 10px;
+  font-size: 20px;
+}
+
+header button {
+  margin: 10px 5px 0px 10px;
+  font-size: 20px;
+  background-color: #FF7700;
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Mulish";
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.login h2 {
+  color: #FF7700;
+  font-family: "Dancing Script";
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.login button {
+  font-size: 18px;
+}
+
+.login {
+  background: #fff;
+  padding: 20px 50px 50px 50px;
+  margin: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.signup h2 {
+  color: #FF7700;
+  font-family: "Dancing Script";
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.signup button {
+  font-size: 18px;
+}
+
+.signup {
+  background: #fff;
+  padding: 20px 50px 50px 50px;
+  margin: 50px;
+  border-radius: 10px;
+  font-size: 20px;
 }
 .pages{
   max-width: 1400px;
@@ -32,30 +101,43 @@ header a {
   margin: 0 auto;
 }
 
+
 /* homepage */
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  gap: 40px;
 }
+
+.home 
 .recipe-details {
   background: #fff;
-  border-radius: 4px;
+  border-radius: 10px;
+  width: 85%;
   margin: 20px auto;
-  padding: 20px;
+  padding: 30px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 .recipe-details h4 {
-  margin: 0 0 10px 0;
-  font-size: 1.2em;
+  margin: 0 0 15px 0;
+  font-size: 40px;
+  font-family: "Dancing Script";
   color: var(--primary);
 }
 .recipe-details p {
   margin: 0;
-  font-size: 0.9em;
-  color: #555;
+  font-size: 20px;
+  line-height: 30px;
 }
+
+.dateposted {
+  margin-top:15px;
+  font-size: 18px;
+  color:#FF7700;
+  font-weight: bold;
+}
+
 .recipe-details span {
   position: absolute;
   top: 20px;
@@ -65,6 +147,32 @@ header a {
   padding: 6px;
   border-radius: 50%;
   color: #333;
+}
+
+.recipeform {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 30px 30px 30px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.recipeform h2 {
+  font-family: "Dancing Script";
+  color: #FF7700;
+  font-size: 40px;
+}
+
+.instructions {
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.removebutton {
+  margin-left: 10px;
+  font-size: 15px;
+  padding: 8px;
 }
 
 /* new recipe form */
@@ -80,15 +188,29 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 form button {
   background: var(--primary);
+  font-size: 18px;
   border: 0;
   color: #fff;
   padding: 10px;
-  font-family: "Poppins";
+  font-family: "Mulish";
   border-radius: 4px;
   cursor: pointer;
 }
+
+form textarea {
+  padding: 10px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
 div.error {
   padding: 10px;
   background: #ffefef;

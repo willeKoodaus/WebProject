@@ -53,7 +53,7 @@ const recipeSchema = new Schema({
     required: false
     },
   publicity: {
-    boolean: Number,
+    type: Boolean,
     required: false
     },
   user_id: {

@@ -18,7 +18,7 @@ router.use(requireAuth)
 router.get('/', getRecipes)
 
 // GET all public recipes
-router.get('/:public', getPublicRecipes)
+router.get('/public', getPublicRecipes)
 
 //GET a single recipe
 router.get('/:id', getRecipe)

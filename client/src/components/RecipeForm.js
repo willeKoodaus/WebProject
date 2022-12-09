@@ -123,7 +123,7 @@ const RecipeForm = () => {
               <input 
               type="checkbox" 
               id="public"
-              onChange={(event) => setPublicity(event.target.value)}
+              onChange={(event) => setPublicity(event.target.checked)}
               />
             </label>
             <button className="recipeformbutton" type="submit">Submit Recipe</button>

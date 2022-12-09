@@ -53,7 +53,6 @@ const RecipeForm = () => {
 
   const handleAddIngredient = (event) => {
     event.preventDefault();
-      // Ingredient is valid, add it to the list of ingredients
       setIngredients((prev) => [...prev, { ingredient, amount, unit }]);
       setIngredient('');
       setAmount(0);

@@ -15,7 +15,7 @@ const reviewSchema = new mongoose.Schema({
     type: String,
     required: false
   }
-})
+},{ timestamps: true })
 
 const ingredientSchema = new Schema({
   ingredient: {
@@ -55,6 +55,10 @@ const recipeSchema = new Schema({
   public: {
     boolean: Number,
     required: true
+    },
+    user_id: {
+      type: String,
+      required: true
     },
 }, { timestamps: true })
 

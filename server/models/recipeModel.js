@@ -5,11 +5,11 @@ const Schema = mongoose.Schema
 const reviewSchema = new mongoose.Schema({
   user: {
     type: String,
-    required: true
+    required: false
   },
   rating: {
     type: Number,
-    required: true
+    required: false
   },
   comment: {
     type: String,
@@ -52,13 +52,13 @@ const recipeSchema = new Schema({
     contentType: String,
     required: false
     },
-  public: {
+  publicity: {
     boolean: Number,
-    required: true
+    required: false
     },
-    user_id: {
-      type: String,
-      required: true
+  user_id: {
+    type: String,
+    required: true
     },
 }, { timestamps: true })
 

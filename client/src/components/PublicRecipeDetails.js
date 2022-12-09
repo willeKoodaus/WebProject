@@ -6,7 +6,7 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 const API_URL=process.env.REACT_APP_API_URL;
 
-const RecipeDetails = ({ recipe }) => {
+const PublicRecipeDetails = ({ recipe }) => {
   const { dispatch } = useRecipesContext()
   const { user } = useAuthContext()
 
@@ -41,4 +41,4 @@ const RecipeDetails = ({ recipe }) => {
   )
 }
 
-export default RecipeDetails
+export default PublicRecipeDetails

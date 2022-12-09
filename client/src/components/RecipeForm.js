@@ -16,6 +16,7 @@ const RecipeForm = () => {
   const [instructions, setInstructions] = useState('')
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
+  const [publicity, setPublicity] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -25,7 +26,7 @@ const RecipeForm = () => {
       return
     }
 
-    const recipe = {recipeName, ingredients, instructions}
+    const recipe = {recipeName, ingredients, instructions, publicity}
 
     const response = await fetch(API_URL + '/recipes/', {
       method: 'POST',

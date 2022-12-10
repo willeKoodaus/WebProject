@@ -47,8 +47,8 @@ const Home = () => {
   return (
     <div className="home">
       <div className="recipes">
-        <button onClick={() => {setPublicity(true); console.log("public")}}>Show public recipes</button>
-        <button onClick={() => {setPublicity(false); console.log("private")}}>Show my recipes</button>
+        <button onClick={() => {setPublicity(true)}}>Show public recipes</button>
+        <button onClick={() => {setPublicity(false)}}>Show my recipes</button>
         {recipes && recipes.map((recipe) => {
           if(publicity){
         return (<PublicRecipeDetails key={recipe._id} recipe={recipe} />)

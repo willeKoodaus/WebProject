@@ -32,6 +32,13 @@ const ingredientSchema = new Schema({
   }
 }, { timestamps: false })
 
+const likesSchema = new Schema({
+  user_id: {
+    type: String,
+    required: false
+  }
+},{ timestamps: false })
+
 const recipeSchema = new Schema({
   recipeName: {
     type: String,
@@ -42,10 +49,7 @@ const recipeSchema = new Schema({
     type: String,
     required: true
   },
-  likes: {
-    type: Number,
-    required: false
-  },
+  likes: [likesSchema],
   reviews: [reviewSchema],
   img: {
     data: Buffer,

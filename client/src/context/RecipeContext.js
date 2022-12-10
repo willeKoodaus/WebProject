@@ -14,7 +14,12 @@ export const RecipesReducer = (state, action) => {
       }
     case 'DELETE_recipe':
       return {
-        recipes: state.recipes.filter((w) => w._id !== action.payload._id)
+        recipes: state.recipes.filter((r) => r._id !== action.payload._id)
+      }
+    case 'UPDATE_recipe':
+      const foundIndex = state.recipes.findIndex((r) => r._id === action.payload._id)
+      return {
+        recipes: state.recipes[foundIndex] = action.payload
       }
     default:
       return state

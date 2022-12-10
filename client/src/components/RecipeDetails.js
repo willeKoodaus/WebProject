@@ -31,11 +31,11 @@ const RecipeDetails = ({ recipe }) => {
   return (
     <div className="recipe-details">
       <h4>{recipe.recipeName}</h4>
-      <p><strong>Ingredients: </strong>{recipe.ingredients.map((ingredient, index) => (
+      <div className="ingredients"><strong>Ingredients: </strong>{recipe.ingredients.map((ingredient, index) => (
         <div key={index}>
           <p>
-            {ingredient.amount} {ingredient.unit} {ingredient.ingredient}</p></div>))}</p>
-      <div className="instructions"><strong>Instructions: </strong><br/>{recipe.instructions}</div>
+            {ingredient.amount} {ingredient.unit} {ingredient.ingredient}</p></div>))}</div>
+      <div className="instructions"><strong>Instructions:</strong><br/>{recipe.instructions}</div>
       <div className="dateposted">{formatDistanceToNow(new Date(recipe.createdAt), { addSuffix: true })}</div>
       <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
     </div>

@@ -88,6 +88,18 @@ header button {
   font-size: 20px;
 }
 
+.publicitycheck {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.checkbox {
+  width: 20px;
+  margin-top: 21px;
+  margin-right: 10px;
+}
+
 .signup {
   background: #fff;
   padding: 20px 50px 50px 50px;
@@ -107,6 +119,40 @@ header button {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 40px;
+}
+
+.homebuttons {
+  display: flex;
+  justify-content: center;
+}
+
+.clickedbutton, .clickedbutton2 {
+  margin-left: 0px;
+  margin-right: 50px;
+  background-color: #fff;
+  font-size: 18px;
+  border: 0;
+  color: #FF7700;
+  border: solid;
+  border-color: #FF7700;
+  border-width: 2px;
+  padding: 10px;
+  font-family: "Mulish";
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.notclicked, .notclicked2 {
+  margin-left: 0px;
+  margin-right: 50px;
+  background-color: #FF7700;
+  font-size: 18px;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Mulish";
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .home 
@@ -163,7 +209,7 @@ header button {
   font-size: 40px;
 }
 
-.instructions {
+.instructions, .ingredients {
   margin-top: 10px;
   font-size: 20px;
   line-height: 30px;

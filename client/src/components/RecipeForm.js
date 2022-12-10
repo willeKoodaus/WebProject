@@ -62,7 +62,7 @@ const RecipeForm = () => {
 
   return (
     <form className="recipeform" onSubmit={handleSubmit}>
-      {error && <p className="error">{error}</p>}
+      {error && <p className="errormessage">{error}</p>}
       <label>
         <h2>Add new recipe</h2>
         <h3>Recipe Name:</h3>

@@ -2,6 +2,7 @@ const express = require('express')
 const {
   createRecipe,
   getRecipes,
+  getPublicRecipes,
   getRecipe,
   deleteRecipe,
   updateRecipe
@@ -15,6 +16,9 @@ router.use(requireAuth)
 
 // GET all recipes
 router.get('/', getRecipes)
+
+// GET all public recipes
+router.get('/public', getPublicRecipes)
 
 //GET a single recipe
 router.get('/:id', getRecipe)

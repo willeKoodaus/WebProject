@@ -1,6 +1,6 @@
 import { useRecipesContext } from '../hooks/useRecipesContext'
 import { useAuthContext } from '../hooks/useAuthContext'
-
+import Reviews from './Reviews';
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 

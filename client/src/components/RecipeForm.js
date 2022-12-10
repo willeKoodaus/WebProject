@@ -16,6 +16,7 @@ const RecipeForm = () => {
   const [instructions, setInstructions] = useState('')
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
+  const [publicity, setPublicity] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -25,7 +26,7 @@ const RecipeForm = () => {
       return
     }
 
-    const recipe = {recipeName, ingredients, instructions}
+    const recipe = {recipeName, ingredients, instructions, publicity}
 
     const response = await fetch(API_URL + '/recipes/', {
       method: 'POST',
@@ -53,7 +54,6 @@ const RecipeForm = () => {
 
   const handleAddIngredient = (event) => {
     event.preventDefault();
-      // Ingredient is valid, add it to the list of ingredients
       setIngredients((prev) => [...prev, { ingredient, amount, unit }]);
       setIngredient('');
       setAmount(0);
@@ -117,6 +117,14 @@ const RecipeForm = () => {
             onChange={(event) => setInstructions(event.target.value)}
             className={emptyFields.includes('instructions') ? 'error' : ''}
             />
+            </label>
+            <label>
+              Make recipe public?
+              <input 
+              type="checkbox" 
+              id="public"
+              onChange={(event) => setPublicity(event.target.checked)}
+              />
             </label>
             <button className="recipeformbutton" type="submit">Submit Recipe</button>
             </form>

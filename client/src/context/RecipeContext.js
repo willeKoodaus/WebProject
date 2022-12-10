@@ -18,8 +18,10 @@ export const RecipesReducer = (state, action) => {
       }
     case 'UPDATE_recipe':
       const foundIndex = state.recipes.findIndex((r) => r._id === action.payload._id)
+      const updatedRecipes = [...state.recipes]
+      updatedRecipes[foundIndex] = action.payload
       return {
-        recipes: state.recipes[foundIndex] = action.payload
+        recipes: updatedRecipes
       }
     default:
       return state

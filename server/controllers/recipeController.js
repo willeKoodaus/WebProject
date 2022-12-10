@@ -13,7 +13,7 @@ const getRecipes = async (req, res) => {
 // get all public recipes
 const getPublicRecipes = async (req, res) => {
   const publicity = true
-  
+  console.log("kukkuu")
   const recipes = await Recipe.find({publicity}).sort({createdAt: -1})
 
   res.status(200).json(recipes)
@@ -83,13 +83,13 @@ const deleteRecipe = async (req, res) => {
 // update a recipe
 const updateRecipe = async (req, res) => {
   const { id } = req.params
-
+  console.log("kukkuu")
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({error: 'No such recipe'})
   }
 
   const recipe = await Recipe.findOneAndUpdate({_id: id}, {
-    ...req.body
+    $set: { likes: req.body.likes }
   }, {new: true})
 
   if (!recipe) {

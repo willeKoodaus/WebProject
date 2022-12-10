@@ -118,13 +118,15 @@ const RecipeForm = () => {
             className={emptyFields.includes('instructions') ? 'error' : ''}
             />
             </label>
-            <label>
-              Make recipe public?
-              <input 
+            <label className="publicitycheck">
+              
+              <input
+              className="checkbox"
               type="checkbox" 
               id="public"
               onChange={(event) => setPublicity(event.target.checked)}
               />
+              Make recipe public
             </label>
             <button className="recipeformbutton" type="submit">Submit Recipe</button>
             </form>

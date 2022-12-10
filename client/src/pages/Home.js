@@ -13,6 +13,9 @@ const Home = () => {
   const {recipes, dispatch} = useRecipesContext()
   const {user} = useAuthContext()
   const [publicity, setPublicity] = useState(true)
+  const [clicked, setClicked] = useState('clickedbutton')
+  const [clicked2, setClicked2] = useState('notclicked2')
+ 
   
   useEffect(() => {
     
@@ -47,8 +50,10 @@ const Home = () => {
   return (
     <div className="home">
       <div className="recipes">
-        <button onClick={() => {setPublicity(true)}}>Show public recipes</button>
-        <button onClick={() => {setPublicity(false)}}>Show my recipes</button>
+        <div className="homebuttons">
+        <button className={clicked} onClick={() => {setPublicity(true); setClicked("clickedbutton"); setClicked2("notclicked2"); console.log("public")}}>Show public recipes</button>
+        <button className={clicked2} onClick={() => {setPublicity(false); setClicked("notclicked"); setClicked2("clickedbutton2"); console.log("private")}}>Show my recipes</button>
+        </div>
         {recipes && recipes.map((recipe) => {
           if(publicity){
         return (<PublicRecipeDetails key={recipe._id} recipe={recipe} />)

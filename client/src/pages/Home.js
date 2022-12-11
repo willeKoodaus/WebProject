@@ -47,6 +47,10 @@ const Home = () => {
     }
   }, [dispatch, user, publicity])
 
+  function compareRecipes(recipe1, recipe2) {
+    return recipe2.likes.length - recipe1.likes.length;
+  }
+
   return (
     <div className="home">
       <div className="recipes">
@@ -54,14 +58,12 @@ const Home = () => {
         <button className={clicked} onClick={() => {setPublicity(true); setClicked("clickedbutton"); setClicked2("notclicked2"); console.log("public")}}>Show public recipes</button>
         <button className={clicked2} onClick={() => {setPublicity(false); setClicked("notclicked"); setClicked2("clickedbutton2"); console.log("private")}}>Show my recipes</button>
         </div>
-        {recipes && recipes.map((recipe) => {
-          if(publicity){
+        {(recipes && publicity) && recipes.sort(compareRecipes).map((recipe) => {
         return (<PublicRecipeDetails key={recipe._id} recipe={recipe} />)
-          }else{
-            return (<RecipeDetails key={recipe._id} recipe={recipe} />)
-          }
-      }
-          )}
+          })}
+        {(recipes && !publicity) && recipes.map((recipe) => {
+        return (<RecipeDetails key={recipe._id} recipe={recipe} />)
+          })}
       </div>
       <div className="rightcolumn">
       <RecipeForm />

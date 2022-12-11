@@ -1,6 +1,8 @@
 import { useRecipesContext } from '../hooks/useRecipesContext'
 import { useAuthContext } from '../hooks/useAuthContext'
+import { useState } from "react"
 import Reviews from './Reviews';
+import swal from 'sweetalert';
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
@@ -14,7 +16,7 @@ const PublicRecipeDetails = ({ recipe }) => {
     console.log("Inside likes handleClick and user.email is: " + user._id)
     const userLike = recipe.likes.find(like => like.user_id === user._id)
     if (userLike) {
-      alert("You have already liked this recipe.")
+      swal("You have already liked this recipe.");
       return
     }
     recipe.likes.push({user_id: user._id})
@@ -41,7 +43,7 @@ const PublicRecipeDetails = ({ recipe }) => {
         <p>{ingredient.amount} {ingredient.unit} {ingredient.ingredient}</p></div>))}</div>
         <div className="instructions"><strong>Instructions:<br/></strong>{recipe.instructions}</div>
         <div className="dateposted">{formatDistanceToNow(new Date(recipe.createdAt), { addSuffix: true })}</div>
-        <div className="likes"><strong><button onClick={handleClick}>likes:{recipe.likes.length}</button></strong></div>
+        <div className="likes"><strong><button onClick={handleClick}>{recipe.likes.length} likes</button></strong></div>
     </div>
   )
 }

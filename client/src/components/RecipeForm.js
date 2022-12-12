@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useRecipesContext } from "../hooks/useRecipesContext"
 import { useAuthContext } from '../hooks/useAuthContext'
 
@@ -17,6 +17,19 @@ const RecipeForm = () => {
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
   const [publicity, setPublicity] = useState(false)
+  const [imageFile, setImageFile] = useState(null)
+
+  function convertToBase64(file){
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result)
+      };
+      fileReader.onerror = (error) => {
+        reject(error)
+      }
+    })}
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -25,8 +38,12 @@ const RecipeForm = () => {
       setError('You must be logged in')
       return
     }
+    let img = ''
+    if(imageFile){
+      img = await convertToBase64(imageFile)
+    }
 
-    const recipe = {recipeName, ingredients, instructions, publicity}
+    const recipe = {recipeName, ingredients, instructions, publicity, img}
 
     const response = await fetch(API_URL + '/recipes/', {
       method: 'POST',
@@ -46,6 +63,7 @@ const RecipeForm = () => {
       setRecipeName('')
       setIngredients([])
       setInstructions('')
+      setImageFile(null)
       setError(null)
       setEmptyFields([])
       dispatch({type: 'CREATE_recipe', payload: json})
@@ -118,8 +136,16 @@ const RecipeForm = () => {
             className={emptyFields.includes('instructions') ? 'error' : ''}
             />
             </label>
+            <label>
+              <h3>Recipe image:</h3>
+              <input
+                type="file"
+                accept='.jpeg, .png, .jpg'
+                onChange={(event) => setImageFile(event.target.files[0])}
+              />
+              {imageFile && <img alt="not fount" width={"250px"} src={URL.createObjectURL(imageFile)}></img>}
+            </label>
             <label className="publicitycheck">
-              
               <input
               className="checkbox"
               type="checkbox" 

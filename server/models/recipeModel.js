@@ -52,8 +52,7 @@ const recipeSchema = new Schema({
   likes: [likesSchema],
   reviews: [reviewSchema],
   img: {
-    data: Buffer,
-    contentType: String,
+    type: String,
     required: false
     },
   publicity: {

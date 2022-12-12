@@ -1,6 +1,5 @@
 const Recipe = require('../models/recipeModel')
 const mongoose = require('mongoose')
-
 // get all recipes
 const getRecipes = async (req, res) => {
   const user_id = req.user._id
@@ -13,7 +12,6 @@ const getRecipes = async (req, res) => {
 // get all public recipes
 const getPublicRecipes = async (req, res) => {
   const publicity = true
-  console.log("kukkuu")
   const recipes = await Recipe.find({publicity}).sort({createdAt: -1})
 
   res.status(200).json(recipes)
@@ -39,7 +37,9 @@ const getRecipe = async (req, res) => {
 
 // create new recipe
 const createRecipe = async (req, res) => {
-  const {recipeName, ingredients, instructions, likes, reviews, publicity} = req.body
+
+  
+  const {recipeName, ingredients, instructions, likes, reviews, img, publicity} = req.body
 
   let emptyFields = []
 
@@ -56,7 +56,7 @@ const createRecipe = async (req, res) => {
   // add doc to db
   try {
     const user_id = req.user._id
-    const recipe = await Recipe.create({recipeName, ingredients, instructions, likes, reviews, publicity, user_id})
+    const recipe = await Recipe.create({recipeName, ingredients, instructions, likes, reviews, img, publicity, user_id})
     res.status(200).json(recipe)
   } catch (error) {
     res.status(400).json({error: error.message})
@@ -83,7 +83,6 @@ const deleteRecipe = async (req, res) => {
 // update a recipe
 const updateRecipe = async (req, res) => {
   const { id } = req.params
-  console.log("kukkuu")
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({error: 'No such recipe'})
   }

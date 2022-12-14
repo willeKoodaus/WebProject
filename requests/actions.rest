@@ -28,7 +28,7 @@ Authorization: bearer {{token}}
 
 
 ### GET Request
-GET {{baseurl}}/recipes
+GET {{baseurl}}/recipes/
 Content-Type: {{contentType}}
 Authorization: bearer {{token}}
 

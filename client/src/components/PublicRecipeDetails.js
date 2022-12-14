@@ -13,14 +13,12 @@ const PublicRecipeDetails = ({ recipe }) => {
   const { user } = useAuthContext()
 
   const handleClick = async () => {
-    console.log("Inside likes handleClick and user.email is: " + user._id)
     const userLike = recipe.likes.find(like => like.user_id === user._id)
     if (userLike) {
       swal("You have already liked this recipe.");
       return
     }
     recipe.likes.push({user_id: user._id})
-    console.log("Inside likes handleClick and likes legth is: " + recipe.likes.length)
     const response = await fetch(API_URL  + '/recipes/' + recipe._id, {
       method: 'PATCH',
       body: JSON.stringify(recipe),

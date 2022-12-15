@@ -20,8 +20,8 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use('/api/recipes', recipeRoutes)
-app.use('/api/user', userRoutes)
+app.use('/client/recipes', recipeRoutes)
+app.use('/client/user', userRoutes)
 
 app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')

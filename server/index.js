@@ -28,10 +28,10 @@ app.get('/', (req, res) => {
 })
 
 // connect to db
-mongoose.connect('mongodb+srv://willep:hunajameloni@cluster0.hzfy5lc.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
     // listen for requests
-    app.listen(3000, () => {
+    app.listen(process.env.PORT, () => {
       console.log('connected to db & listening on port', process.env.PORT || 3000)
     })
   })

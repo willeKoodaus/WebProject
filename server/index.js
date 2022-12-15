@@ -31,10 +31,10 @@ app.get('/', (req, res) => {
 })
 
 // connect to db
-mongoose.connect(MONGO, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect("mongodb+srv://willep:hunajameloni@cluster0.hzfy5lc.mongodb.net/?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
     // listen for requests
-    app.listen(PORT, () => {
+    app.listen(3000, () => {
       console.log('connected to db & listening on port', PORT || 3000)
     })
   })

@@ -1,11 +1,10 @@
-const dotenv = require("dotenv");
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const recipeRoutes = require('./routes/recipes')
 const userRoutes = require('./routes/user')
 
-dotenv.config();
 // express app
 const app = express()
 
@@ -29,7 +28,7 @@ app.get('/', (req, res) => {
 })
 
 // connect to db
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect('process.env.MONGO_URI', {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
